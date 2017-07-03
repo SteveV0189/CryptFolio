@@ -1,0 +1,71 @@
+Starting Operations
+Delete took 156ms.
+Adding Set took $1134ms.
+Adding Set took $604ms.
+Adding Set took $638ms.
+Adding Set took $585ms.
+Adding Set took $585ms.
+Adding Set took $681ms.
+Adding Set took $618ms.
+Adding Set took $586ms.
+Adding Set took $519ms.
+Entire operations took 6461ms.
+Starting Operations
+Delete took 183ms.
+Adding Set took $613ms.
+Adding Set took $613ms.
+Adding Set took $599ms.
+Adding Set took $573ms.
+Adding Set took $613ms.
+Adding Set took $691ms.
+Adding Set took $612ms.
+Adding Set took $640ms.
+Adding Set took $567ms.
+Entire operations took 6057ms.
+Starting Operations
+Delete took 178ms.
+Adding Set took $541ms.
+Adding Set took $598ms.
+Adding Set took $639ms.
+Adding Set took $518ms.
+Adding Set took $602ms.
+Adding Set took $655ms.
+Adding Set took $530ms.
+Adding Set took $486ms.
+Adding Set took $533ms.
+Entire operations took 5615ms.
+Starting Operations
+Delete took 116ms.
+Add took 409ms.
+Save took 4979ms.
+Entire operations took 5505ms.
+Starting Operations
+Delete took 157ms.
+Add took 36ms.
+Save took 4385ms.
+Entire operations took 4579ms.
+Starting Operations
+Delete took 222ms.
+Add took 16ms.
+Save took 4102ms.
+Entire operations took 4341ms.
+Starting Operations
+Delete took 178ms.
+Add took 17ms.
+Save took 5344ms.
+Entire operations took 5540ms.
+Starting Operations
+Delete took 166ms.
+Add took 14ms.
+Save took 3627ms.
+Entire operations took 3808ms.
+Starting Operations
+Delete took 191ms.
+Add took 22ms.
+Save took 3828ms.
+Entire operations took 4043ms.
+Starting Operations
+Delete took 147ms.
+Add took 22ms.
+Save took 3663ms.
+Entire operations took 3833ms.
