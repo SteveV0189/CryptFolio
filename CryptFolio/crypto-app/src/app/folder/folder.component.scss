@@ -1,0 +1,129 @@
+$folder_width: 40vw;
+$folder_height: 80vh;
+$folder_foreground_colors:  #757575, #616161, #424242;
+$folder_background_colors:  #616161, #424242, #313131;
+$folder_tab_color:          #616161;
+
+@mixin exponentialGradient($from, $colors) {
+    background: nth($colors, 2);
+    background: -webkit-linear-gradient($from, nth($colors, 1) 0%, nth($colors, 2) 70%, nth($colors, 3) 100%);
+    background: linear-gradient($from, nth($colors, 1) 0%, nth($colors, 2) 70%, nth($colors, 3) 100%);
+}
+
+@keyframes folderUnfold {
+        0% { transform: rotateY(0deg);}
+    100% { transform: rotateY(-180deg);}
+}
+
+@keyframes folderLighten {
+        from    { filter: brightness(1); }
+        to      { filter: brightness(1.5); }
+}
+
+@keyframes folderLighten2 {
+        from    { filter: brightness(1); }
+        to      { filter: brightness(2); }
+}
+
+.wrapper {
+    width: $folder_width * 2;
+}
+
+.folder {
+    box-shadow: 20px 10px 16px 4px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    right: (100vw - $folder_width*2)/2;
+    perspective: 2500px;
+    margin: 5vh 0vh auto;
+    width: $folder_width;
+    height: $folder_height;
+    text-align: center;
+    
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: 229px;
+        left: 0;
+        right: 0;
+        margin: 0 18em;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 5vw;
+        right: 0;
+        width: $folder_width - 5vw;
+    }
+
+    .back {
+        width: $folder_width;
+        height: $folder_height;
+        border-radius: 0px 10px 10px 0px;
+        position: relative;
+        margin: 0 auto;
+        z-index: 10;
+        animation: folderLighten2 0.75s ease 0s forwards;
+        @include exponentialGradient(to bottom, $folder_background_colors);
+    }
+
+    .cover {
+        @include exponentialGradient(to bottom, $folder_foreground_colors);
+        width: $folder_width;
+        height: $folder_height;
+        border-radius: 0px 10px 10px 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+        margin: 0 auto;
+        transform-origin: 0 100%;
+        animation: folderUnfold 1.25s ease 0s forwards,
+                   folderLighten 1.25s ease 0s forwards;
+        span {
+            backface-visibility: hidden;
+        }
+        &::after {
+            box-shadow: -20px 10px 16px 4px rgba(0, 0, 0, 0.7);
+            position: absolute;
+            content: "";
+            width: $folder_width;
+            height: $folder_height;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -10;
+        }
+    }
+}
+            
+// .paper {
+//     background: #fff;
+//     height: 100px;
+//     width: $folder_width * 0.8;
+//     box-shadow: 0px 0px 4px 1px rgba(0,0,0,.7);
+//     position: absolute;
+//     top: 15px;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     margin: 0 50%;
+//     opacity: 0;
+//     animation: folderPaperJump .75s ease .75s forwards;
+//     +.paper {
+//         margin: 8px 270px 0 255px;
+//         animation: folderPaperJump .95s ease 1s forwards;
+//         +.paper {
+//             margin: 16px 255px 0 270px;
+//             animation: folderPaperJump .75s ease 1.25s forwards;
+//         }
+//     }
+// }
+
+// @keyframes folderPaperJump {
+//     0% { transform: translateY(100px); opacity: 0; }
+//     25% { transform: translateY(100px); opacity: 1; }
+//     75% { transform: translateY(-10px); opacity: 1; }
+//     100% { transform: translateY(0px); opacity: 1; }
+// }

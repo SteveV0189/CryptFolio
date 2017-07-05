@@ -1,0 +1,58 @@
+<md-card>
+  <md-tab-group [selectedIndex]="selectedTab" md-colors="primary" md-stretch-tabs="always">
+    <md-tab label="Manage Portfolios">
+      <div class="tab-content">
+        <div class="tab-header">
+          <p>Select an existing portfolio, or create a new one.</p>
+        </div>
+        <input accept=".json, text/json" (change)="folioUpload($event)" type="file" id="folio-upload"><label class="clickable" for="folio-upload">        
+          <a md-raised-button color="primary">Upload File<md-icon class="md-18">file_upload</md-icon></a>
+        </label>
+        <a (click)="createPortfolio()" md-raised-button color="accent">Create New&nbsp;<md-icon class="md-18">build</md-icon></a>
+      </div>
+    </md-tab>
+    <md-tab [disabled]="selectedPortfolio == null" label="Portfolio Summary">
+      <div *ngIf="selectedPortfolio != null" class="tab-content">
+        <div class="tab-header">
+            <md-input-container color="accent" class="example-full-width">
+              <input mdInput placeholder="Portfolio Name" [(ngModel)]="selectedPortfolio.name">
+            </md-input-container>
+        </div>
+        <a md-raised-button color="primary">Upload File<md-icon class="md-18">file_upload</md-icon></a>
+        <a md-raised-button color="accent">Create New&nbsp;<md-icon class="md-18">build</md-icon></a>
+      </div>
+    </md-tab>
+    <md-tab [disabled]="selectedPortfolio == null" label="Edit Portfolio">
+      <div *ngIf="selectedPortfolio != null" class="tab-content">
+        <div class="tab-header">
+          <p>Modify investments for {{selectedPortfolio.name}}</p>
+        </div>
+        <md-grid-list cols="8" rowHeight="fit" [style.height]="'250px'" [gutterSize]="'1px'">
+            <md-grid-tile [colspan]="1" [rowspan]="1">
+                <md-grid-tile-header>
+                    <md-icon md-grid-avatar>build</md-icon>
+                    Header text
+                </md-grid-tile-header>
+                <p>Tile Body</p>
+            </md-grid-tile>
+            <md-grid-tile [colspan]="1" [rowspan]="1">
+                <md-grid-tile-header>
+                    <md-icon md-grid-avatar>build</md-icon>
+                    Header1
+                </md-grid-tile-header>
+                Tile body
+            </md-grid-tile>       
+        </md-grid-list>
+      </div>
+    </md-tab>
+    <md-tab [disabled]="selectedPortfolio == null" label="Generate Reports">
+      <div class="tab-content">
+        <div class="tab-header">
+          <p>Select an existing portfolio, or create a new one.</p>
+        </div>
+        <a md-raised-button color="primary">Upload File<md-icon class="md-18">file_upload</md-icon></a>
+        <a md-raised-button color="accent">Create New&nbsp;<md-icon class="md-18">build</md-icon></a>
+      </div>
+    </md-tab>
+  </md-tab-group>
+</md-card>

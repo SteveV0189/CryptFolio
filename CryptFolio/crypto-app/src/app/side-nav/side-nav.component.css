@@ -1,0 +1,10 @@
+md-sidenav-container {
+  margin: 0;
+  width: 100%;
+  height: calc(100vh - 64px);
+}
+
+md-sidenav {
+    padding: 16px;
+}
+

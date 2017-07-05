@@ -32,11 +32,11 @@ namespace CryptFolio.Models
                 using (var ctx = CryptoContext.Get)
                 {
                     ctx.ChangeTracker.AutoDetectChangesEnabled = false;
-                    await ctx.Database.ExecuteSqlCommandAsync("DELETE FROM Coins");
                     if (ctx.Coins.Any(c => c.Id > 2000))
                     {
                         await ctx.Database.ExecuteSqlCommandAsync("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'Coins';");
                     }
+                    await ctx.Database.ExecuteSqlCommandAsync("DELETE FROM Coins");
                     await ctx.Coins.AddRangeAsync(coins);
                     await ctx.SaveChangesAsync();
                 }
